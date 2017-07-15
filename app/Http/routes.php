@@ -21,6 +21,12 @@
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {
+    $user = Auth::user();
+    if ($user != null) {
+        if ($user->isAdmin()) {
+            return view('gem/admin/index');
+        }
+    }
     return view('gem/home/index');
 });
 /*
@@ -58,3 +64,6 @@ Route::get('/goldcoins', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/galleryview', 'AdminController@index');
+Route::get('/gallery-add', 'AdminController@gallery_add');
