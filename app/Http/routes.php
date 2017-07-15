@@ -11,6 +11,10 @@
 |
 */
 
+//Route::get('/login', function () {
+//    return view('welcome');
+//});
+
 /*
 |--------------------------------------------------------------------------
 | GEMSTONE Home Page
@@ -51,3 +55,6 @@ Route::get('/jewellery', function () {
 Route::get('/goldcoins', function () {
     return view('gem/coins/index');
 });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
