@@ -16,8 +16,8 @@
                     <tbody>
                         @foreach($Categories as $cat)
                         <tr>
-                            <td>{{ $cat->id }}</td>
-                            <td>{{ $cat->name }}</td>
+                            <td style="color:#000;">{{ $cat->id }}</td>
+                            <td style="color:#000;">{{ $cat->name }}</td>
                             <td><a href="{{ url('edit_page/'.$cat->id) }}">Edit</a> | <a href="{{ url('category-destroy/'.$cat->id) }}">Delete</a></td>
                         </tr>
                         @endforeach

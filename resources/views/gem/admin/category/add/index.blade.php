@@ -17,7 +17,7 @@
                             <label for="parent_id">Parent Id:</label>
                             <input type="text"  name="parent_id" class="form-control" value="">
                         </div>
-                        <button type="submit" class="btn btn-default" name="submit" value="">Submit</button>
+                        <button type="submit" class="btn btn-default" name="ADD" value="">ADD</button>
                     </form>
                 </div>
             </div>
