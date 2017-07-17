@@ -16,8 +16,4 @@ class AdminController extends Controller {
     public function add_categories() {
         return view('gem/admin/category/add/index');
     }
-    public function category_get() {
-        echo "I am here";exit;
-//        return view('gem/admin/category/add/index');
-    }
 }

@@ -77,13 +77,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </li>
                             <li class="dropdown1"><a href="{{ url('view-categories') }}">SUB CATEGORY</a>
                                 <ul class="dropdown2">
-                                    <li><a href="{{url('/add-categories') }}">ADD</a></li>
-                                    <li><a href="{{ url('view-categories') }}">VIEW</a></li>
+                                    <li><a href="{{url('/sub-category-add') }}">ADD</a></li>
+                                    <li><a href="{{ url('/subcategory') }}">VIEW</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown1"><a href="{{ url('view-categories') }}">PAGE</a>
                                 <ul class="dropdown2">
-                                    <li><a href="{{url('/add-categories') }}">ADD</a></li>
+                                    <li><a href="{{url('/subcategory') }}">ADD</a></li>
                                     <li><a href="{{ url('show') }}">VIEW</a></li>
                                 </ul>
                             </li>
