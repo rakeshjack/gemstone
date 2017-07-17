@@ -13,4 +13,11 @@ class AdminController extends Controller {
     public function gallery_add() {
         return view('gem/admin/gallery/add/index');
     }
+    public function add_categories() {
+        return view('gem/admin/category/add/index');
+    }
+    public function category_get() {
+        echo "I am here";exit;
+//        return view('gem/admin/category/add/index');
+    }
 }

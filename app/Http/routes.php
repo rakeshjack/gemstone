@@ -67,3 +67,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/galleryview', 'AdminController@index');
 Route::get('/gallery-add', 'AdminController@gallery_add');
+Route::get('/add-categories','AdminController@add_categories');
+Route::post('/category-add','AdminController@category_get');
+Route::resource('/store','CategoryController@store');
+Route::resource('/show','CategoryController@show');
+Route::resource('/edit_page','CategoryController@edit_page');
+Route::resource('/category-update','CategoryController@category_update');
