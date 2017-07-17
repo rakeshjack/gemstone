@@ -73,3 +73,4 @@ Route::resource('/store','CategoryController@store');
 Route::resource('/show','CategoryController@show');
 Route::resource('/edit_page','CategoryController@edit_page');
 Route::resource('/category-update','CategoryController@category_update');
+Route::resource('/category-destroy','CategoryController@category_destroy');

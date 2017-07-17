@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Categories;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
-class CategoryController extends Controller
-{
+class CategoryController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -23,8 +22,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -46,10 +44,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()  {
-        $Categories=Categories::all();
-        return view('gem/admin/category/index',  compact('Categories'));
+    public function show() {
+        $Categories = Categories::all();
+        return view('gem/admin/category/index', compact('Categories'));
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,8 +56,8 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit_page($id) {
-        $Category=  Categories::findOrFail($id);
-        return view('gem/admin/category/edit/index',  compact('Category'));
+        $Category = Categories::findOrFail($id);
+        return view('gem/admin/category/edit/index', compact('Category'));
     }
 
     /**
@@ -68,8 +67,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -79,12 +77,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function category_destroy($id) {
+        Categories::whereId($id)->delete();
+        return redirect('show');
     }
-    
+
     public function category_update(Request $request) {
-        
+        $category = Categories::findOrFail($request->id);
+        $category->update($request->all());
+        return redirect('show');
     }
+
 }
