@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>View Categories</h1>          
+                <h1>View Sub-Category</h1>
                 <table class="table">
                     <thead>
                         <tr>
@@ -20,7 +20,7 @@
                             <td style="color:#000;">{{ $cat->id }}</td>
                             <td style="color:#000;">{{ $cat->category_id }}</td>
                             <td style="color:#000;">{{ $cat->name }}</td>
-                            <td><a href="{{ url('subcategory/'.$cat->id.'/edit') }}">Edit</a> | <a href="{{ url('category-destroy/'.$cat->id) }}">Delete</a></td>
+                            <td><a href="{{ url('subcategory/'.$cat->id.'/edit') }}">Edit</a> | <a href="{{ url('sub-category-destroy/'.$cat->id) }}">Delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>
