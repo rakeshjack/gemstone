@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Pages;
 use App\Categories;
 use App\sub_categories;
 use Illuminate\Http\Request;
@@ -37,9 +38,9 @@ class PageController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        Pages::create($request->all());
+        return redirect('add-page');
     }
 
     /**

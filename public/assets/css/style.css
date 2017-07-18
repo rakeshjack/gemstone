@@ -740,7 +740,7 @@ h5.typ1{
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   background-color:#5bb2fc !important;
-  border-color:#5bb2fc; !important;
+  border-color:#5bb2fc !important;
 }
 .grid_3 p,.page-header p {
   color: #888;

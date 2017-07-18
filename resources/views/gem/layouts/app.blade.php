@@ -8,12 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
     <head>
         <title>Gem Stone a Fashion Category Flat Bootstrap Responsive Website Template| Home :: w3layouts</title>
-        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link href="{{ asset('assets/css/bootstrap.css') }} " rel='stylesheet' type='text/css' />
         <!-- jQuery (Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }} "></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }} "></script>
         <!-- Custom Theme files -->
-        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('assets/css/style.css') }} " rel="stylesheet" type="text/css" media="all" />
         <!-- Custom Theme files -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -25,13 +25,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,700,900' rel='stylesheet' type='text/css'>
         <!--webfont-->
         <!-- dropdown -->
-        <script src="js/jquery.easydropdown.js"></script>
-        <link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
-        <script src="js/modernizr.custom.js"></script>
+        <script src="{{ asset('assets/js/jquery.easydropdown.js') }} "></script>
+        <link href="{{ asset('assets/css/nav.css') }} " rel="stylesheet" type="text/css" media="all"/>
+        <script src="{{ asset('assets/js/modernizr.custom.js') }} "></script>
         <!--js-->
         <!---- start-smoth-scrolling---->
-        <script type="text/javascript" src="js/move-top.js"></script>
-        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/move-top.js') }} "></script>
+        <script type="text/javascript" src="{{ asset('assets/js/easing.js') }} "></script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
@@ -44,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </head>
     <body>
         <!--banner-->
-        <script src="js/responsiveslides.min.js"></script>
+        <script src="{{ asset('assets/js/responsiveslides.min.js') }} "></script>
         <script>
             $(function () {
                 $("#slider").responsiveSlides({
@@ -64,7 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="container">
                 <div class="header">
                     <div class="logo">
-                        <a href="index.html">GEM STONE</a>
+                        <a href="/">GEM STONE</a>
                     </div>							 
                     <div class="top-nav">										 
                         <label class="mobile_menu" for="mobile_menu">
@@ -72,7 +72,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </label>
                         <input id="mobile_menu" type="checkbox">
                         <ul class="nav">
-                            <li><a href="index.html"><img src="images/home.png"></a></li>
+                            <li><a href="index.html"><img src="{{ asset('assets/images/home.png') }} "></a></li>
                             <li><a href="{{ url('about') }}">ABOUT</a></li>
                             <li class="dropdown1"><a href="{{ url('jewellery') }}">JEWELLERY</a>
                                 <ul class="dropdown2">
@@ -131,7 +131,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
             <div class="dwn">
-                <a class="scroll" href="#cate"><img src="images/scroll.png" alt=""/></a>
+                <a class="scroll" href="#cate"><img src="{{ asset('assets/images/scroll.png') }} " alt=""/></a>
             </div>
          @endif
         </div>

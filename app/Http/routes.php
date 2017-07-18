@@ -80,3 +80,4 @@ Route::resource('/sub-category-update','SubCategoryController@update');
 Route::resource('/sub-category-destroy','SubCategoryController@destroy');
 Route::resource('/pages','PageController');
 Route::resource('/add-page','PageController@create');
+Route::resource('/add-page-insert','PageController@store');

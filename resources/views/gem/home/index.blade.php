@@ -14,7 +14,7 @@
 				veritatis et quasi architecto beatae vitae.</p>
 			</div>
 			<div class="col-md-2 wel-middle text-center">
-				<img src="images/444.png" alt=" "/>
+				<img src="{{ asset('assets/images/444.png') }} " alt=" "/>
 			</div>
 			<div class="col-md-5 wel-right">
 				<p>Sed ut perspiciatis unde omnis iste natus 
@@ -36,7 +36,7 @@
 		 <div class="categorie-grids cs-style-1">
 				 <div class="col-md-4 cate-grid grid">
 					<figure>
-						<img src="images/c1.jpg" alt="">
+						<img src="{{ asset('assets/images/c1.jpg') }} " alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
@@ -46,7 +46,7 @@
 				 </div>
 				 <div class="col-md-4 cate-grid grid">
 					 <figure>
-						<img src="images/c2.jpg" alt="">
+						<img src="{{ asset('assets/images/c2.jpg') }} " alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
@@ -58,7 +58,7 @@
 
 				 <div class="col-md-4 cate-grid grid">
 					 <figure>
-						<img src="images/c3.jpg" alt="">
+						<img src="{{ asset('assets/images/c3.jpg') }} " alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
@@ -69,7 +69,7 @@
 
 				 <div class="col-md-4 cate-grid grid">
 					<figure>
-						<img src="images/c4.jpg" alt="">
+						<img src="{{ asset('assets/images/c4.jpg') }} " alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
@@ -80,7 +80,7 @@
 
 				 <div class="col-md-4 cate-grid grid">
 					<figure>
-						<img src="images/c5.jpg" alt="">
+						<img src="{{ asset('assets/images/c5.jpg') }} " alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
@@ -91,7 +91,7 @@
 
 				 <div class="col-md-4 cate-grid grid">
 					 <figure>
-						<img src="images/c6.jpg" alt="">
+						<img src="{{ asset('assets/images/c6.jpg') }}" alt="">
 						<figcaption>
 							<h3>ANTIQUE PIECE</h3>
 							<span>Accusantium Dolor</span>
