@@ -78,3 +78,5 @@ Route::resource('/sub-category-add','SubCategoryController@sub_category_add');
 Route::resource('/sub-category-insert','SubCategoryController@store');
 Route::resource('/sub-category-update','SubCategoryController@update');
 Route::resource('/sub-category-destroy','SubCategoryController@destroy');
+Route::resource('/pages','PageController');
+Route::resource('/add-page','PageController@create');

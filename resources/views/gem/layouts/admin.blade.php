@@ -81,10 +81,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a href="{{ url('/subcategory') }}">VIEW</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown1"><a href="{{ url('view-categories') }}">PAGE</a>
+                            <li class="dropdown1"><a href="{{ url('/pages') }}">PAGE</a>
                                 <ul class="dropdown2">
-                                    <li><a href="{{url('/subcategory') }}">ADD</a></li>
-                                    <li><a href="{{ url('show') }}">VIEW</a></li>
+                                    <li><a href="{{url('/add-page') }}">ADD</a></li>
+                                    <li><a href="{{ url('/') }}">VIEW</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown1"><a href="{{ url('galleryview') }}">GALLERY</a>
@@ -93,7 +93,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a href="">VIEW</a></li>
                                 </ul>
                             </li>
-                            <li><a class="scroll" href="#contact">CONTACT</a></li>
                             @if (Auth::guest())
                             <li class="dropdown1"><a href="{{ url('/login') }}">LOGIN</a>
                                 <ul class="dropdown2">
@@ -104,6 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             @else
                             <li class="dropdown1"><a href="{{ url('gallery') }}">{{ Auth::user()->name }}</a>
                                 <ul class="dropdown2">
+                                    <li><a href="{{ url('/logout') }}">Edit Profile</a></li>
                                     <li><a href="{{ url('/logout') }}">Logout</a></li>
                                 </ul>
                             </li>
