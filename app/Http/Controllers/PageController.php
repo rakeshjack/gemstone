@@ -5,7 +5,6 @@ use App\Pages;
 use App\Categories;
 use App\sub_categories;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class PageController extends Controller {
