@@ -37,9 +37,8 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-//        return $request->all();
         Categories::create($request->all());
-        return redirect('add-categories');
+        return redirect('add-categories')->with('message','Category created');
     }
 
     /**
@@ -48,9 +47,10 @@ class CategoryController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show() {
+    public function show(Request $request) {
         $Categories = Categories::all();
-        return view('gem/admin/category/index', compact('Categories'));
+        $message=$request->session()->flash('message','View all Categories');
+        return view('gem/admin/category/index', compact('Categories','message'));
     }
 
     /**

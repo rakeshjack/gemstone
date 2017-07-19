@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
-use App\sub_categories;
+use App\Sub_categories;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -19,7 +19,7 @@ class SubCategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $sub_category = sub_categories::all();
+        $sub_category = Sub_categories::all();
         return view('gem/admin/sub_category/index', compact('sub_category'));
     }
 
@@ -39,7 +39,7 @@ class SubCategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        sub_categories::create($request->all());
+        Sub_categories::create($request->all());
         return redirect('sub-category-add');
     }
 
@@ -60,7 +60,7 @@ class SubCategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $sub_category = sub_categories::findOrFail($id);
+        $sub_category = Sub_categories::findOrFail($id);
         $category = Categories::all();
         return view('gem/admin/sub_category/edit/index', compact('category', 'sub_category'));
     }
@@ -73,7 +73,7 @@ class SubCategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request) {
-        $sub_category = sub_categories::findOrFail($request->id);
+        $sub_category = Sub_categories::findOrFail($request->id);
         $sub_category->update($request->all());
         return redirect('/subcategory');
     }
@@ -85,7 +85,7 @@ class SubCategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        sub_categories::whereId($id)->delete();
+        Sub_categories::whereId($id)->delete();
         return redirect('subcategory');
     }
 

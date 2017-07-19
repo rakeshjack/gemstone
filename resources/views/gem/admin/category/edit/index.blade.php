@@ -13,10 +13,6 @@
                             <label for="category_name">Category Name:</label>
                             <input type="text" name="name" class="form-control" value="{{$Category->name }}">
                         </div>
-                        <div class="form-group">
-                            <label for="parent_id">Parent Id:</label>
-                            <input type="text"  name="parent_id" class="form-control" value="{{$Category->parent_id}}">
-                        </div>
                         <button type="submit" class="btn btn-default" name="UPDATE" value="UPDATE">UPDATE</button>
                     </form>
                 </div>

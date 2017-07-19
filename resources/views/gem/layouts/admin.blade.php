@@ -81,10 +81,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a href="{{ url('/subcategory') }}">VIEW</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown1"><a href="{{ url('/pages') }}">PAGE</a>
+                            <li class="dropdown1"><a href="{{ url('/page') }}">PAGE</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{url('/add-page') }}">ADD</a></li>
-                                    <li><a href="{{ url('/') }}">VIEW</a></li>
+                                    <li><a href="{{ url('/page') }}">VIEW</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown1"><a href="{{ url('galleryview') }}">GALLERY</a>
@@ -103,7 +103,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             @else
                             <li class="dropdown1"><a href="{{ url('gallery') }}">{{ Auth::user()->name }}</a>
                                 <ul class="dropdown2">
-                                    <li><a href="{{ url('/logout') }}">Edit Profile</a></li>
                                     <li><a href="{{ url('/logout') }}">Logout</a></li>
                                 </ul>
                             </li>
@@ -114,6 +113,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
+        @if(Session::has('message'))
+        <p class="alert alert-success">{{ Session::get('message') }}</p>
+        @endif
         <!--/banner-->
         
                 @yield('content')

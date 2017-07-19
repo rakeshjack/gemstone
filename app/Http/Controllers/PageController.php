@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Pages;
 use App\Categories;
-use App\sub_categories;
+use App\Sub_categories;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -18,7 +18,8 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('gem/admin/page/index');
+        $page=Pages::all();
+        return view('gem/admin/page/index',compact('page'));
     }
 
     /**
@@ -27,7 +28,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $sub_category= sub_categories::all();
+        $sub_category= Sub_categories::all();
         return view('gem/admin/page/add/index',  compact('sub_category'));
     }
 
@@ -48,9 +49,10 @@ class PageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id)   {
+        $page=Pages::findOrFail($id);
+        $sub_category=  Sub_categories::all();
+        return view('gem/admin/page/edit/index',  compact('sub_category','page'));
     }
 
     /**
@@ -59,9 +61,8 @@ class PageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id)   {
+        
     }
 
     /**
@@ -71,9 +72,8 @@ class PageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request)   {
+        echo "Will be Updated from here";
     }
 
     /**
@@ -82,8 +82,8 @@ class PageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+        Pages::whereId($id)->delete();
+        return redirect('page');
     }
 }

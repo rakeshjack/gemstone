@@ -5,28 +5,31 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-md-offset-1">
-                <h1>ADD PAGE</h1>
+                <h1>UPDATE PAGE</h1>
                 <div class="panel panel-default">
-                    <form method="POST" action="{{ url('/add-page-insert') }}" style="padding:20px">
+                    <form method="POST" action="{{ url('/page-update') }}" style="padding:20px">
                         {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{$page->id }}">
                         <div class="form-group">
                             <label for="Title">Title:</label>
-                            <input type="text"  name="title" class="form-control" value="" required>
+                            <input type="text"  name="title" class="form-control" value="{{$page->title }}">
                         </div>
                         <div class="form-group">
                             <label for="category_id">Select Sub-Category:</label>
                             <select class="form-control" name="sub_category_id" required>
-                                <option selected="true" disabled="disabled">Select Sub-Category</option>
+                                <option selected="true" disabled="disabled" >Select Sub-Category</option>
+                                @if($sub_category !=null)
                                 @foreach($sub_category as $cat)
-                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                <option value="{{ $cat->id }}"  {{ $cat->id==$page->sub_category_id ? " selected " : "" }}>{{ $cat->name }}</option>
                                 @endforeach
+                                @endif
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="comment">Content:</label>
-                            <textarea name="content" class="form-control my-editor"></textarea>
+                            <textarea name="content" class="form-control my-editor">{{$page->content }}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-default" name="ADD" value="">ADD</button>
+                        <button type="submit" class="btn btn-default" name="UPDATE" value="">UPDATE</button>
                     </form>
                 </div>
             </div>
