@@ -17,12 +17,11 @@ use App\Categories;
 
 /*
 |--------------------------------------------------------------------------
-| GEMSTONE Home Page
+| GEMSTONE LOGIN Section
 |--------------------------------------------------------------------------
 */
-
-Route::get('/main-page', 'ClientController@index');
 Route::get('/gemstone-admin-login','ClientController@login');
+Route::get('/main-page','ClientController@index');
 Route::get('/', function () {
     $user = Auth::user();
     if ($user != null) {
@@ -32,47 +31,26 @@ Route::get('/', function () {
     }
     return redirect('/main-page');
 });
+
+
+Route::get('/category-drop','ClientController@category_lists');
+Route::get('/get-category/{id}','ClientController@get');
+Route::get('get-sub-category/{id}','ClientController@get_sub_category');
 /*
 |--------------------------------------------------------------------------
 | GEMSTONE Home Page
 |--------------------------------------------------------------------------
 */
 Route::get('/about', function () {
-    $category=  Categories::all();
+    $category =  Categories::with(array('sub_categorys'))->get();
     return view('gem/about/index',["category"=>$category]);
 });
 /*
 |--------------------------------------------------------------------------
-| GEMSTONE Gallery Page
-|--------------------------------------------------------------------------
-*/
-Route::get('/gallery', function () {
-    $category=  Categories::all();
-    return view('gem/gallery/index',["category"=>$category]);
-});
-/*
-|--------------------------------------------------------------------------
 | GEMSTONE Jewellery Page
 |--------------------------------------------------------------------------
 */
-Route::get('/jewellery', function () {
-    $category=  Categories::all();
-    return view('gem/jewelry/index',["category"=>$category]);
-});
-/*
-|--------------------------------------------------------------------------
-| GEMSTONE Jewellery Page
-|--------------------------------------------------------------------------
-*/
-Route::get('/goldcoins', function () {
-    $category=  Categories::all();
-    return view('gem/coins/index',["category"=>$category]);
-});
 Route::auth();
-//Route::get('login', 'Auth\AuthController@login');
-//Route::post('login', 'Auth\AuthController@login');
-//Route::get('logout', 'Auth\AuthController@logout');
-
 
 Route::get('/home', 'HomeController@index');
 

@@ -33,12 +33,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script type="text/javascript" src="{{ asset('assets/js/move-top.js') }} "></script>
         <script type="text/javascript" src="{{ asset('assets/js/easing.js') }} "></script>
         <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 900);
-                });
-            });
+jQuery(document).ready(function ($) {
+    $(".scroll").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 900);
+    });
+});
         </script>
         <!---- start-smoth-scrolling---->
     </head>
@@ -46,148 +46,138 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--banner-->
         <script src="{{ asset('assets/js/responsiveslides.min.js') }} "></script>
         <script>
-            $(function () {
-                $("#slider").responsiveSlides({
-                    auto: true,
-                    nav: true,
-                    speed: 500,
-                    namespace: "callbacks",
-                    pager: true,
-                });
-            });
+$(function () {
+    $("#slider").responsiveSlides({
+        auto: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        pager: true,
+    });
+});
         </script>
         @if(Request::segment(1)  === NULL)
         <div class="banner-bg banner-bg1">	
             @else 
-        <div class="banner-bg banner-bg1 page-head">
-         @endif
-            <div class="container">
-                <div class="header">
-                    <div class="logo">
-                        <a href="/">GEM STONE</a>
-                    </div>							 
-                    <div class="top-nav">										 
-                        <label class="mobile_menu" for="mobile_menu">
-                            <span>Menu</span>
-                        </label>
-                        <input id="mobile_menu" type="checkbox">
-                        <ul class="nav">
-                            <li><a href="index.html"><img src="{{ asset('assets/images/home.png') }} "></a></li>
-                            <li><a href="{{ url('about') }}">ABOUT</a></li>
-                            <li class="dropdown1"><a href="{{ url('jewellery') }}">JEWELLERY</a>
-                                <ul class="dropdown2">
-                                    @if($category!=null) 
-                                    @foreach($category as $cat)
-                                    <li><a href="">{{$cat->name }}</a></li>
+            <div class="banner-bg banner-bg1 page-head">
+                @endif
+                <div class="container">
+                    <div class="header">
+                        <div class="logo">
+                            <a href="/">GEM STONE</a>
+                        </div>							 
+                        <div class="top-nav">										 
+                            <label class="mobile_menu" for="mobile_menu">
+                                <span>Menu</span>
+                            </label>
+                            <input id="mobile_menu" type="checkbox">
+                            <ul class="nav">
+                                <li><a href="/"><img src="{{ asset('assets/images/home.png') }} "></a></li>
+                                <li><a href="{{ url('about') }}">ABOUT</a></li>
+                                @if($category!=null)                                
+                                @foreach($category as $cat)
+                                <li class="dropdown1 dropdown_sub_category"><a href="{{ url('get-category/'.$cat->id.'/')}}">{{ $cat->name }}</a>
+                                    <?php if($cat->sub_categorys!=NULL) { ?>
+                                    <ul class="dropdown2">
+                                        <?php foreach($cat->sub_categorys as $sub_cat) { ?>
+                                        <li><a href="{{ url('get-sub-category/'.$sub_cat->id.'/')}}"></a><?php echo $sub_cat->name;  ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                    <?php } ?>
                                     @endforeach
                                     @endif
-                                </ul>
-                            </li>
-                            <li class="dropdown1"><a href="{{ url('goldcoins') }}">GOLD COINS</a>
-                                <ul class="dropdown2">
-                                    <li><a href="typography.html">1 GRAM</a></li>
-                                    <li><a href="typography.html">5 GRAMS</a></li>
-                                    <li><a href="typography.html">10 GRAMS</a></li>												
-                                </ul>
-                            </li>
-                            <li class="dropdown1"><a href="{{ url('gallery') }}">GALLERY</a>
-                                <ul class="dropdown2">
-                                    <li><a href="gallery.html">GALLERY 1</a></li>
-                                    <li><a href="gallery.html">GALLERY 2</a></li>
-                                    <li><a href="gallery.html">GALLERY 3</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="scroll" href="#contact">CONTACT</a></li>
-                            @if (Auth::guest())
-<!--                            <li class="dropdown1"><a href="{{ url('gallery') }}">LOGIN</a>
-                                <ul class="dropdown2">
-                                    <li><a href="{{ url('/login') }}">Sign In</a></li>
-                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>
-                                </ul>
-                            </li>-->
-                            @else
-                            <li class="dropdown1"><a href="{{ url('gallery') }}">{{ Auth::user()->name }}</a>
-                                <ul class="dropdown2">
-                                    <li><a href="{{ url('/logout') }}">Logout</a></li>
-                                </ul>
-                            </li>
-                            @endif
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-         @if(Request::segment(1)  === NULL)
-            <div class="caption">
-                <div class="slider">
-                    <div class="callbacks_container">
-                        <ul class="rslides" id="slider">
-                            <li><h1>EXQUISITE DESIGNER JEWELLERY</h1></li>	
-                            <li><h1>EXCLUSIVE QUALITY</h1></li>
-                            <li><h1>LATEST DESIGNS WITH BEST PRICES</h1></li>
-                        </ul>
-                        <p>With Our Jewellery You Discover Your Natural Beauty</p>
-                        <a class="morebtn" href="#">MORE</a>
+                                </li>
+                                <li><a class="scroll" href="#contact">CONTACT</a></li>
+                                @if (Auth::guest())
+                                <!--                            <li class="dropdown1"><a href="{{ url('gallery') }}">LOGIN</a>
+                                                                <ul class="dropdown2">
+                                                                    <li><a href="{{ url('/login') }}">Sign In</a></li>
+                                                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>
+                                                                </ul>
+                                                            </li>-->
+                                @else
+                                <li class="dropdown1"><a href="{{ url('gallery') }}">{{ Auth::user()->name }}</a>
+                                    <ul class="dropdown2">
+                                        <li><a href="{{ url('/logout') }}">Logout</a></li>
+                                    </ul>
+                                </li>
+                                @endif
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-            </div>
-            <div class="dwn">
-                <a class="scroll" href="#cate"><img src="{{ asset('assets/images/scroll.png') }} " alt=""/></a>
-            </div>
-         @endif
-        </div>
-        <!--/banner-->
-
-
-
-        @yield('content')
-
-
-
-
-
-        <!---->
-        <div class="footer">
-            <div class="container">
-                <div class="footer-grids">
-                    <div class="logo2">
-                        <a href="index.html">GEM STONE</a>
+                @if(Request::segment(1)  === NULL)
+                <div class="caption">
+                    <div class="slider">
+                        <div class="callbacks_container">
+                            <ul class="rslides" id="slider">
+                                <li><h1>EXQUISITE DESIGNER JEWELLERY</h1></li>	
+                                <li><h1>EXCLUSIVE QUALITY</h1></li>
+                                <li><h1>LATEST DESIGNS WITH BEST PRICES</h1></li>
+                            </ul>
+                            <p>With Our Jewellery You Discover Your Natural Beauty</p>
+                            <a class="morebtn" href="#">MORE</a>
+                        </div>
                     </div>
-                    <div class="ftr-menu">
-                        <ul>
-                            <li><a href="{{ url('about') }}">ABOUT</a></li>
-                            <li><a href="{{ url('jewellery') }}">JEWELLERY</a></li>
-                            <li><a href="{{ url('goldcoins') }}">GOLD COINS</a></li>
-                            <li><a href="{{ url('gallery') }}">GALLERY</a></li>
-                            <li><a class="scroll" href="#contact">CONTACT</a></li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
+                <div class="dwn">
+                    <a class="scroll" href="#cate"><img src="{{ asset('assets/images/scroll.png') }} " alt=""/></a>
+                </div>
+                @endif
+            </div>
+            <!--/banner-->
 
+
+
+            @yield('content')
+
+
+
+
+
+            <!---->
+            <div class="footer">
+                <div class="container">
+                    <div class="footer-grids">
+                        <div class="logo2">
+                            <a href="index.html">GEM STONE</a>
+                        </div>
+                        <div class="ftr-menu">
+                            <ul>
+                                <li><a href="{{ url('about') }}">ABOUT</a></li>
+                                <li><a href="{{ url('jewellery') }}">JEWELLERY</a></li>
+                                <li><a href="{{ url('goldcoins') }}">GOLD COINS</a></li>
+                                <li><a href="{{ url('gallery') }}">GALLERY</a></li>
+                                <li><a class="scroll" href="#contact">CONTACT</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <div class="copy-right">
-            <div class="container">
-                <p> &copy; 2015 Gem_Stone. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+            <div class="copy-right">
+                <div class="container">
+                    <p> &copy; 2015 Gem_Stone. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+                </div>
             </div>
-        </div>
-        <!---->
-        <!-- smooth scrolling -->
-        <script type="text/javascript">
-            $(document).ready(function () {
-                /*
-                 var defaults = {
-                 containerID: 'toTop', // fading element id
-                 containerHoverID: 'toTopHover', // fading element hover id
-                 scrollSpeed: 1200,
-                 easingType: 'linear' 
-                 };
-                 */
-                $().UItoTop({easingType: 'easeOutQuart'});
-            });
-        </script>
-        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-        <!-- //smooth scrolling -->
+            <!---->
+            <!-- smooth scrolling -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                     var defaults = {
+                     containerID: 'toTop', // fading element id
+                     containerHoverID: 'toTopHover', // fading element hover id
+                     scrollSpeed: 1200,
+                     easingType: 'linear' 
+                     };
+                     */
+                    $().UItoTop({easingType: 'easeOutQuart'});
+                });
+            </script>
+            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+            <!-- //smooth scrolling -->
     </body>
 </html>
