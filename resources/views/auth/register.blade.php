@@ -1,4 +1,4 @@
-@extends('gem.layouts.app')
+@extends('gem.layouts.admin')
 
 @section('content')
 <div class="moments">

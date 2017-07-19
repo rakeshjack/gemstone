@@ -24,6 +24,6 @@ class ClientController extends Controller {
     }
     public function get_sub_category(Request $request,$id) {
         echo "Sub category will be from here<br>";
-        echo $id;
+        echo "Id".$id;
     }
 }

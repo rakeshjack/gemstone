@@ -28,8 +28,9 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $sub_category= Sub_categories::all();
-        return view('gem/admin/page/add/index',  compact('sub_category'));
+        $category =  Categories::all();
+        $sub_category   = Sub_categories::all();
+        return view('gem/admin/page/add/index',  compact('sub_category','category'));
     }
 
     /**

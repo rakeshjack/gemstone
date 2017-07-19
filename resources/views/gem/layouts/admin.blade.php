@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li class="dropdown1"><a href="{{ url('/gemstone-admin-login') }}">LOGIN</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{ url('/login') }}">Sign In</a></li>
-<!--                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>-->
+                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>
                                 </ul>
                             </li>
                             @else
