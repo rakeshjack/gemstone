@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Pages;
 use App\Categories;
 use App\Sub_categories;
+use App\Gallery;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -40,7 +41,17 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        Pages::create($request->all());
+      $page=Pages::create($request->all());
+      $file=$request->file('image');
+        if($page!=null) {
+         $gallery= new Gallery();
+         $gallery->model_id=$page->id;
+         $gallery->model_name="page";
+         $gallery->image=$file->getClientOriginalName();
+         $gallery->image_type=$file->getClientOriginalExtension();
+         $gallery->save();
+         $file->move('assets/path/images',$file->getClientOriginalName());
+        }
         return redirect('add-page');
     }
 

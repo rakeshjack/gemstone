@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Title">Images:</label>
-                            <input type="file"  name="image_name" class="form-control" value="" required>
+                            <input type="file"  name="image" class="form-control" value="" required>
                         </div>
                         <button type="submit" class="btn btn-default" name="ADD" value="">ADD</button>
                     </form>
