@@ -76,12 +76,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li><a href="{{ url('about') }}">ABOUT</a></li>
                             <li class="dropdown1"><a href="{{ url('jewellery') }}">JEWELLERY</a>
                                 <ul class="dropdown2">
-                                    <li><a href="jewellery.html">PENDANTS</a></li>
-                                    <li><a href="jewellery.html">BRACELETS</a></li>
-                                    <li><a href="jewellery.html">EARRINGS</a></li>
-                                    <li><a href="jewellery.html">PEARLS</a></li>
+                                    @if($category!=null) 
+                                    @foreach($category as $cat)
+                                    <li><a href="">{{$cat->name }}</a></li>
+                                    @endforeach
+                                    @endif
                                 </ul>
-                            </li> 
+                            </li>
                             <li class="dropdown1"><a href="{{ url('goldcoins') }}">GOLD COINS</a>
                                 <ul class="dropdown2">
                                     <li><a href="typography.html">1 GRAM</a></li>
@@ -98,12 +99,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </li>
                             <li><a class="scroll" href="#contact">CONTACT</a></li>
                             @if (Auth::guest())
-                            <li class="dropdown1"><a href="{{ url('gallery') }}">LOGIN</a>
+<!--                            <li class="dropdown1"><a href="{{ url('gallery') }}">LOGIN</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{ url('/login') }}">Sign In</a></li>
                                     <li><a href="{{ url('/register') }}">Sign Up</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             @else
                             <li class="dropdown1"><a href="{{ url('gallery') }}">{{ Auth::user()->name }}</a>
                                 <ul class="dropdown2">

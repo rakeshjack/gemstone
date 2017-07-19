@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+use App\Categories;
 //Route::get('/login', function () {
 //    return view('welcome');
 //});
@@ -22,7 +22,7 @@
 */
 
 Route::get('/main-page', 'ClientController@index');
-
+Route::get('/gemstone-admin-login','ClientController@login');
 Route::get('/', function () {
     $user = Auth::user();
     if ($user != null) {
@@ -38,7 +38,8 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/about', function () {
-    return view('gem/about/index');
+    $category=  Categories::all();
+    return view('gem/about/index',["category"=>$category]);
 });
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,8 @@ Route::get('/about', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/gallery', function () {
-    return view('gem/gallery/index');
+    $category=  Categories::all();
+    return view('gem/gallery/index',["category"=>$category]);
 });
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +56,8 @@ Route::get('/gallery', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/jewellery', function () {
-    return view('gem/jewelry/index');
+    $category=  Categories::all();
+    return view('gem/jewelry/index',["category"=>$category]);
 });
 /*
 |--------------------------------------------------------------------------
@@ -62,9 +65,14 @@ Route::get('/jewellery', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/goldcoins', function () {
-    return view('gem/coins/index');
+    $category=  Categories::all();
+    return view('gem/coins/index',["category"=>$category]);
 });
 Route::auth();
+//Route::get('login', 'Auth\AuthController@login');
+//Route::post('login', 'Auth\AuthController@login');
+//Route::get('logout', 'Auth\AuthController@logout');
+
 
 Route::get('/home', 'HomeController@index');
 

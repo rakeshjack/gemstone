@@ -68,6 +68,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </label>
                         <input id="mobile_menu" type="checkbox">
                         <ul class="nav">
+                            @if (Auth::guest())
+                            @else
                             <li><a href="{{ url('/') }}"><img src="{{ asset('assets/images/home.png') }} "></a></li>
                             <li class="dropdown1"><a href="{{ url('view-categories') }}">CATEGORY</a>
                                 <ul class="dropdown2">
@@ -93,11 +95,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a href="">VIEW</a></li>
                                 </ul>
                             </li>
+                            @endif
                             @if (Auth::guest())
-                            <li class="dropdown1"><a href="{{ url('/login') }}">LOGIN</a>
+                            <li class="dropdown1"><a href="{{ url('/gemstone-admin-login') }}">LOGIN</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{ url('/login') }}">Sign In</a></li>
-                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>
+<!--                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>-->
                                 </ul>
                             </li>
                             @else

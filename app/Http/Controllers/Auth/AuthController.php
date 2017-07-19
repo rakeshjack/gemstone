@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use App\Categories;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -37,8 +38,14 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+//        $category=  Categories::all();
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+    
+//    public function login() {
+//        $category=  Categories::all();
+//        return view('auth/login',["category"=>$category]);
+//    }
 
     /**
      * Get a validator for an incoming registration request.
