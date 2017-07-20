@@ -24,11 +24,8 @@
                         </div>
                         <div class="form-group">
                             <label for="category_id">Select Sub-Category:</label>
-                            <select class="form-control" name="sub_category_id" required>
+                            <select class="form-control" name="sub_category_id" id="sub_category_id" required>
                                 <option selected="true" disabled="disabled">Select Sub-Category</option>
-                                @foreach($sub_category as $cat)
-                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                                @endforeach
                             </select>
                         </div>
                         <div class="form-group" id="content_status">
@@ -85,14 +82,26 @@ tinymce.init(editor_config);
 </script>
 <script>
     $(document).ready(function () {
-        
         $(".main_category").change(function () {
-            var select_option=$(this).val();
-            if(select_option==1) {
+            var category_id = $(this).val();
+            if (category_id ==1) {
                 $('#content_status').hide();
-            }else{
+            } else {
                 $('#content_status').show();
             }
+            $.ajax({
+                type: "get",
+                url: "fetch-sub-categorys",
+                data: {'category_id': category_id},
+                success: function (data) {
+                    var htmlString = "";
+                    htmlString += "<option selected='true' disabled='disabled'>Select Sub-Category</option>";
+                    for (var i=0;i<data.length;i++) {
+                        htmlString += '<option value="'+ data[i].id+'">' + data[i].name + '</option>';
+                    }
+                    $("#sub_category_id").html(htmlString);
+                }
+            });
         });
     });
 </script>

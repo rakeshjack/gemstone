@@ -35,7 +35,8 @@ Route::get('/', function () {
 
 Route::get('/category-drop','ClientController@category_lists');
 Route::get('/get-category/{id}','ClientController@get');
-Route::get('get-sub-category/{id}','ClientController@get_sub_category');
+Route::get('/get-sub-category/{id}','ClientController@get_sub_category');
+Route::get('/fetch-sub-categorys','ClientController@fetch_sub_category');
 /*
 |--------------------------------------------------------------------------
 | GEMSTONE Home Page
