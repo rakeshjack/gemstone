@@ -13,50 +13,12 @@
 	<!--moments-starts--> 
 	<div class="moments">
 		<div class="container">
-				<h3>GALLERY</h3>
+				<h3>GALLERY
+                                </h3>
 			<div class="moments-bottom">
+
 					<div class="col-md-4 moments-left">
 						<a class="mask1" href="{{ asset('assets/images/w1.jpg') }} ">
-							<img src="{{ asset('assets/images/w1.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w2.jpg') }} ">
-							<img src="{{ asset('assets/images/w2.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w3.jpg') }} ">
-							<img src="{{ asset('assets/images/w3.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w4.jpg') }} ">
-							<img src="{{ asset('assets/images/w4.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href=" {{ asset('assets/images/w5.jpg') }} ">
-							<img src=" {{ asset('assets/images/w5.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w6.jpg')  }} ">
-							<img src="{{ asset('assets/images/w6.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" class="mask1" href="{{ asset('assets/images/w7.jpg') }}">
-							<img src="{{ asset('assets/images/w7.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w8.jpg') }} ">
-							<img src="{{ asset('assets/images/w8.jpg') }} " class="img-responsive zoom-img" alt="name" />
-						</a>
-					</div>
-					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w1.jpg') }}">
 							<img src="{{ asset('assets/images/w1.jpg') }} " class="img-responsive zoom-img" alt="name" />
 						</a>
 					</div>

@@ -80,7 +80,7 @@ $(function () {
                                     <?php if($cat->sub_categorys!=NULL) { ?>
                                     <ul class="dropdown2">
                                         <?php foreach($cat->sub_categorys as $sub_cat) { ?>
-                                        <li><a href="{{ url('get-sub-category/'.$sub_cat->id.'/')}}"></a><?php echo $sub_cat->name;  ?></li>
+                                        <li><a href="{{ url('get-sub-category/'.$sub_cat->category_id.'/'.$sub_cat->id.'/')}}"></a><?php echo $sub_cat->name;  ?></li>
                                         <?php } ?>
                                     </ul>
                                     <?php } ?>

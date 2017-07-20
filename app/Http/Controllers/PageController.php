@@ -50,7 +50,7 @@ class PageController extends Controller {
          $gallery->image=$file->getClientOriginalName();
          $gallery->image_type=$file->getClientOriginalExtension();
          $gallery->save();
-         $file->move('assets/path/images',$file->getClientOriginalName());
+         $file->move('assets/images',$file->getClientOriginalName());
         }
         return redirect('add-page');
     }

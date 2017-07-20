@@ -89,18 +89,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li><a href="{{ url('/page') }}">VIEW</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown1"><a href="{{ url('galleryview') }}">GALLERY</a>
+<!--                            <li class="dropdown1"><a href="{{ url('galleryview') }}">GALLERY</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{ url('gallery-add') }}">ADD</a></li>
                                     <li><a href="">VIEW</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             @endif
                             @if (Auth::guest())
                             <li class="dropdown1"><a href="{{ url('/gemstone-admin-login') }}">LOGIN</a>
                                 <ul class="dropdown2">
                                     <li><a href="{{ url('/login') }}">Sign In</a></li>
-                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>
+<!--                                    <li><a href="{{ url('/register') }}">Sign Up</a></li>-->
                                 </ul>
                             </li>
                             @else
