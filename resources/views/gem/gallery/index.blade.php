@@ -13,15 +13,17 @@
 	<!--moments-starts--> 
 	<div class="moments">
 		<div class="container">
-				<h3>GALLERY
-                                </h3>
+                                <h3>GALLERY</h3>
 			<div class="moments-bottom">
-
+                                        <?php foreach($page as $p) {
+                                            foreach($p->gallery_post as $post) { ?>
 					<div class="col-md-4 moments-left">
-						<a class="mask1" href="{{ asset('assets/images/w1.jpg') }} ">
-							<img src="{{ asset('assets/images/w1.jpg') }} " class="img-responsive zoom-img" alt="name" />
+                                            <a class="mask1" href="/assets/images/<?php echo $post->image; ?>">
+							<img src="/assets/images/<?php echo $post->image; ?> " class="img-responsive zoom-img" alt="name" />
 						</a>
 					</div>
+                                        <?php } ?>                                        
+                                            <?php }?>
 					<div class="clearfix"> </div>
 			</div>
 		</div>

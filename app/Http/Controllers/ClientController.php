@@ -29,9 +29,6 @@ class ClientController extends Controller {
     }
 
     public function get_sub_category(Request $request,$category_id,$id) {
-        echo "Sub category will be from here<br>";
-        echo "category_id = ".$category_id."<br>";
-        echo "Id ==" . $id;
         $category = Categories::with(array('sub_categorys'))->get();
         if($category_id==1) {
             $page=  Pages::with(array('gallery_post'))->where('sub_category_id',$id)->get();
