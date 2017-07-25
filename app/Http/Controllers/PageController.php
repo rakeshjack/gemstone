@@ -85,7 +85,9 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)   {
-        echo "I am  here ";
+        $page=  Pages::findOrFail($request->id);
+        $page->update($request->all());
+        return redirect('page');
     }
 
     /**
