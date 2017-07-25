@@ -35,7 +35,6 @@ class ClientController extends Controller {
         $category = Categories::with(array('sub_categorys'))->get();
         if($category_id==1) {
             $page=  Pages::with(array('gallery_post'))->where('sub_category_id',$id)->get();
-//            echo '<pre>';print_r($page);die();
             return view('gem/gallery/index', ["category" => $category,"page" =>$page]);
         }
     }

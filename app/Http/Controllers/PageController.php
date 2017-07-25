@@ -85,7 +85,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)   {
-        echo "Will be Updated from here";
+        echo "I am  here ";
     }
 
     /**
