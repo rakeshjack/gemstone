@@ -25,7 +25,6 @@ class PageController extends Controller {
 
     /**
      * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create() {
@@ -63,8 +62,9 @@ class PageController extends Controller {
      */
     public function show($id)   {
         $page=Pages::findOrFail($id);
-        $sub_category=  Sub_categories::all();
-        return view('gem/admin/page/edit/index',  compact('sub_category','page'));
+        $sub_category=  Sub_categories::findOrFail($page->sub_category_id);
+        $categories=  Categories::findOrFail($sub_category->category_id);
+        return view('gem/admin/page/edit/index',  compact('sub_category','page','categories'));
     }
 
     /**

@@ -39,7 +39,6 @@ class ClientController extends Controller {
      *      AJAX Call in PAGES 
      */
     public function fetch_sub_category(Request $request) {
-//        echo $request->category_id;
         $sub_category = Sub_categories::where('category_id', $request->category_id)->get();
         if ($sub_category != null) {
             return $sub_category;

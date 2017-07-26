@@ -15,20 +15,30 @@
                             <input type="text"  name="title" class="form-control" value="{{$page->title }}">
                         </div>
                         <div class="form-group">
+                            <label for="category_id">Select Category:</label>
+                            <select class="form-control main_category" name="category_id" required>
+                                <option selected="true" disabled="disabled">Select Category</option>
+                                <option value="{{ $categories->id }}" selected>{{ $categories->name }}</option>                                
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="category_id">Select Sub-Category:</label>
                             <select class="form-control" name="sub_category_id" required>
                                 <option selected="true" disabled="disabled" >Select Sub-Category</option>
-                                @if($sub_category !=null)
-                                @foreach($sub_category as $cat)
-                                <option value="{{ $cat->id }}"  {{ $cat->id==$page->sub_category_id ? " selected " : "" }}>{{ $cat->name }}</option>
-                                @endforeach
-                                @endif
+                                <option value="{{ $sub_category->id }}" selected>{{ $sub_category->name }}</option>
                             </select>
                         </div>
+                        @if($categories->id!=1)
                         <div class="form-group">
                             <label for="comment">Content:</label>
                             <textarea name="content" class="form-control my-editor">{{$page->content }}</textarea>
                         </div>
+                        @else 
+                        <div class="form-group">
+                            <label for="Title">Images:</label>
+                            <input type="file"  name="image" class="form-control" value="" required>
+                        </div>
+                        @endif
                         <button type="submit" class="btn btn-default" name="UPDATE" value="">UPDATE</button>
                     </form>
                 </div>
