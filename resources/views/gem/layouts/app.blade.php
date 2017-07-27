@@ -77,12 +77,12 @@ $(function () {
                                 @if($category!=null)                                
                                 @foreach($category as $cat)
                                 <li class="dropdown1 dropdown_sub_category"><a href="{{ url('get-category/'.$cat->id.'/')}}">{{ $cat->name }}</a>
-                                    <?php if($cat->sub_categorys!=NULL) { ?>
-                                    <ul class="dropdown2">
-                                        <?php foreach($cat->sub_categorys as $sub_cat) { ?>
-                                        <li><a href="{{ url('get-sub-category/'.$sub_cat->category_id.'/'.$sub_cat->id.'/')}}"></a><?php echo $sub_cat->name;  ?></li>
-                                        <?php } ?>
-                                    </ul>
+                                    <?php if ($cat->sub_categorys != NULL) { ?>
+                                        <ul class="dropdown2">
+                                            <?php foreach ($cat->sub_categorys as $sub_cat) { ?>
+                                                <li><a href="{{ url('get-sub-category/'.$sub_cat->category_id.'/'.$sub_cat->id.'/')}}"></a><?php echo $sub_cat->name; ?></li>
+                                            <?php } ?>
+                                        </ul>
                                     <?php } ?>
                                     @endforeach
                                     @endif
@@ -133,9 +133,29 @@ $(function () {
             @yield('content')
 
 
-
-
-
+            <!--contact-->
+            <div id="contact" class="contact">
+                <div class="container">
+                    <h3>CONTACT US</h3>
+                    <p>Please contact us for all inquiries and purchase options.</p>
+                    <div class="cont-grids">
+                        <div class="col-md-6 contact-left">
+                            <form method="POST" action="{{ url('/contact-us-details') }}" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <input type="text" name="name"  placeholder="NAME" required="">
+                                <input type="text" name="surname" placeholder="SURNAME" required="">			 
+                                <input class="user" name="email" type="text" placeholder="E-MAIL" required=""><br>
+                                <textarea name="message" placeholder="MESSAGE"></textarea>
+                                <input type="submit" value="SEND">
+                            </form>
+                        </div>
+                        <div class="col-md-6 contact-right">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" frameborder="0" style="border:0"></iframe>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
             <!---->
             <div class="footer">
                 <div class="container">

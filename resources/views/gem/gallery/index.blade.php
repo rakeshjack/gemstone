@@ -30,27 +30,5 @@
 	</div>	
 	<!--moments-->
 <!--//gallery-->
-<!--contact-->
-<div id="contact" class="contact">
-	<div class="container">
-		<h3>CONTACT US</h3>
-		<p>Please contact us for all inquiries and purchase options.</p>
-			<div class="cont-grids">
-				<div class="col-md-6 contact-left">
-					<form>
-						 <input type="text" placeholder="NAME" required="">
-						 <input type="text" placeholder="SURNAME" required="">			 
-						 <input class="user" type="text" placeholder="E-MAIL" required=""><br>
-						 <textarea placeholder="MESSAGE"></textarea>
-						 <input type="submit" value="SEND">
-					</form>
-				</div>
-				<div class="col-md-6 contact-right">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" frameborder="0" style="border:0"></iframe>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-	</div>
-</div>
 @stop
 <!--footer-->

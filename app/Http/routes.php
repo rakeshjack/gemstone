@@ -74,3 +74,4 @@ Route::resource('/add-page-insert','PageController@store');
 Route::resource('/show-page','PageController@show');
 Route::resource('/page-destroy','PageController@destroy');
 Route::resource('/page-update','PageController@update');
+Route::post('/contact-us-details','ClientController@contact_us');
