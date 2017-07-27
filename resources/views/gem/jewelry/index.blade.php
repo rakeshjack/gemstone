@@ -3,32 +3,14 @@
 @section('content')
 <div class="jewellery">
 	<div class="container">
+            @foreach($page as $page)
 		<div class="jewe-head">
-			<h3>EXCLUSIVE JEWELLERY DESIGNS</h3>
+			<h3>{{ $page->title }}</h3>
 		</div>
 		<div class="jewe-grids">
-			<div class="col-md-6 jewe-left">
-				<img src="{{ asset('assets/images/h1.jpg') }} " alt=""/>
-			</div>
-			<div class="col-md-6 jewe-right">
-				<div class="j-lg">
-					<img src="{{ asset('assets/images/h5.jpg') }}" alt=""/>
-				</div>
-				<div class="j-rg">
-					<h3>RINGS</h3>
-					<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessi tatibus saepe eveniet ut et voluptates</p>
-				</div>
-				<div class="j-bl">
-					<h3>RINGS</h3>
-					<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessi tatibus saepe eveniet ut et voluptates</p>
-				</div>
-				<div class="j-br">
-					<img src="{{ asset('assets/images/h3.jpg') }} " alt=""/>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
+                    <?php echo  $page->content ?>
 		</div>
+            @endforeach
 	</div>
 </div>
 <!--products-->

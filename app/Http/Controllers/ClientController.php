@@ -34,8 +34,8 @@ class ClientController extends Controller {
         if($category_id==1) {
             $page=  Pages::with(array('gallery_post'))->where('sub_category_id',$id)->get();
             return view('gem/gallery/index', ["category" => $category,"page" =>$page]);
-        }else {
-            $page=  Pages::all();
+        } else {
+            $page=  Pages::whereNotIn('sub_category_id',['1'])->get();
             return view('gem/jewelry/index', ["category" => $category,'page' =>$page]);
         }
     }
