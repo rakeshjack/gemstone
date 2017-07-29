@@ -30,11 +30,7 @@ class ClientController extends Controller {
             return view('gem/gallery/index', ["category" => $category,"page" =>$page]);
         } else {
             $page=  Pages::where('sub_category_id',$id)->get();
-            if($page!=null) {
             return view('gem/jewelry/index', ["category" => $category,'page' =>$page]);
-            }else {
-                return redirect('/');
-            }
         }
     }
     /*
