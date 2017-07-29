@@ -14,7 +14,7 @@
 	</div>
 </div>
 <!--products-->
-<div class="products">
+<!--<div class="products">
 	<div class="container">
 		<div class="pro-head">
 			<h3>UNIQUE COLLECTIONS</h3>
@@ -37,7 +37,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+</div>-->
 <!--//products-->
 <!--//jewellery-->
 @stop
