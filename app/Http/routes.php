@@ -26,7 +26,7 @@ Route::get('/', function () {
     $user = Auth::user();
     if ($user != null) {
         if ($user->isAdmin()) {
-            return view('gem/admin/index');
+            return redirect('show');
         }
     }
     return redirect('/main-page');
