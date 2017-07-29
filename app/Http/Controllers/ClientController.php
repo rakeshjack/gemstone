@@ -23,20 +23,18 @@ class ClientController extends Controller {
     /*
      *      CATEGORY Gets category
      */
-
-    public function get(Request $request, $id) {
-        $category = Categories::with(array('sub_categorys'))->get();
-        return view('gem/jewelry/index', ["category" => $category]);
-    }
-
     public function get_sub_category($category_id,$id) {
         $category = Categories::with(array('sub_categorys'))->get();
         if($category_id==1) {
             $page=  Pages::with(array('gallery_post'))->where('sub_category_id',$id)->get();
             return view('gem/gallery/index', ["category" => $category,"page" =>$page]);
         } else {
-            $page=  Pages::whereNotIn('sub_category_id',['1'])->get();
+            $page=  Pages::where('sub_category_id',$id)->get();
+            if($page!=null) {
             return view('gem/jewelry/index', ["category" => $category,'page' =>$page]);
+            }else {
+                return redirect('/');
+            }
         }
     }
     /*

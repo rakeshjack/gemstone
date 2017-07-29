@@ -41,6 +41,16 @@ jQuery(document).ready(function ($) {
 });
         </script>
         <!---- start-smoth-scrolling---->
+        <style>
+            .nav ul  li:hover > a {
+                background:#e21737;
+            }
+            .nav ul li {                
+            padding-left: 10px;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            }
+        </style>
     </head>
     <body>
         <!--banner-->
@@ -76,7 +86,7 @@ $(function () {
                                 <li><a href="{{ url('about') }}">ABOUT</a></li>
                                 @if($category!=null)                                
                                 @foreach($category as $cat)
-                                <li class="dropdown1 dropdown_sub_category"><a href="{{ url('get-category/'.$cat->id.'/')}}">{{ $cat->name }}</a>
+                                <li class="dropdown1 dropdown_sub_category"><a href="{{ url('/')}}">{{ $cat->name }}</a>
                                     <?php if ($cat->sub_categorys != NULL) { ?>
                                         <ul class="dropdown2">
                                             <?php foreach ($cat->sub_categorys as $sub_cat) { ?>
